@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logbook Subsea review</title>
+<style>
+  :root { --bg: #f5f6f8; --panel: #ffffff; --ink: #1b1f24; --muted: #59636e; --line: #d8dde3; --accent: #1d5fbf;
+          --ok: #1e7a3c; --edit: #8a5a00; --bad: #b42318; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111418; --panel: #1a1f25; --ink: #e7ebef; --muted: #9aa4ae; --line: #2d343c; --accent: #79aefc;
+            --ok: #5cc27e; --edit: #e0b44c; --bad: #ff7b72; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--ink); }
+  header { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; padding: 12px 16px;
+           background: var(--panel); border-bottom: 1px solid var(--line); }
+  h1 { font-size: 17px; margin: 0; }
+  label { color: var(--muted); }
+  input, select, textarea, button { font: inherit; color: var(--ink); background: var(--panel);
+                                    border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+  button { cursor: pointer; }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  a { color: var(--accent); }
+  main { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 16px; padding: 16px; }
+  @media (max-width: 820px) { main { grid-template-columns: 1fr; } }
+  #list { list-style: none; margin: 0; padding: 0; max-height: calc(100vh - 110px); overflow: auto;
+          background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+  .item { display: flex; justify-content: space-between; gap: 8px; width: 100%; text-align: left; border: 0;
+          border-bottom: 1px solid var(--line); border-radius: 0; padding: 8px 10px; background: transparent; }
+  .item.active { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+  .badge { font-size: 12px; white-space: nowrap; color: var(--muted); }
+  .badge.accept { color: var(--ok); } .badge.edit { color: var(--edit); } .badge.reject { color: var(--bad); }
+  #detail { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+  #detail h2 { font-size: 18px; margin: 0 0 4px; }
+  #detail img { display: block; max-width: 100%; height: auto; border-radius: 6px; margin: 10px 0; }
+  textarea { width: 100%; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+  .ok { border-color: var(--ok); color: var(--ok); } .bad { border-color: var(--bad); color: var(--bad); }
+  .muted, .facts, .status { color: var(--muted); }
+  .note { border-left: 3px solid var(--line); padding-left: 10px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Logbook Subsea: review</h1>
+  <label>Reviewer <input id="reviewer" autocomplete="name" maxlength="60"></label>
+  <label>Show
+    <select id="filter">
+      <option value="">all events</option>
+      <option value="todo">not reviewed</option>
+      <option value="pipe not visible">pipe not visible</option>
+      <option value="collar or joint">collars and joints</option>
+    </select>
+  </label>
+  <span id="progress" aria-live="polite"></span>
+  <nav><a href="/export/events.csv">Event listing (CSV)</a> · <a href="/export/report.md">Draft report</a> · <a href="/api/log">Decision log</a></nav>
+</header>
+<main>
+  <section aria-label="Events"><ul id="list"></ul></section>
+  <section id="detail" aria-live="polite"><p class="muted">Pick an event on the left.</p></section>
+</main>
+<template id="detail-tpl">
+  <h2></h2>
+  <p class="facts"></p>
+  <img width="960" height="540" alt="">
+  <label for="draft">Draft, written from what the system measured. Edit it to change the wording.</label>
+  <textarea id="draft" rows="4" maxlength="2000"></textarea>
+  <div class="buttons">
+    <button type="button" data-d="accept" class="ok">Accept draft</button>
+    <button type="button" data-d="edit">Save my edit</button>
+    <label>Reason <input class="reason" maxlength="2000" placeholder="optional"></label>
+    <button type="button" data-d="reject" class="bad">Reject event</button>
+  </div>
+  <p class="msg" role="status"></p>
+  <p class="status"></p>
+  <h3>Local model's description (unverified)</h3>
+  <p class="note"></p>
+</template>
+<script>
+  const $ = (s) => document.querySelector(s);
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+  };
+  let events = [];
+  let currentId = null;
+
+  $("#reviewer").value = store.get("reviewer") || "";
+  $("#reviewer").addEventListener("change", (e) => store.set("reviewer", e.target.value.trim()));
+  $("#filter").addEventListener("change", render);
+
+  async function load() {
+    const r = await fetch("/api/events");
+    events = await r.json();
+    render();
+  }
+
+  function render() {
+    const f = $("#filter").value;
+    const shown = events.filter((e) => !f || (f === "todo" ? !e.decision : e.event === f));
+    $("#progress").textContent = `${events.filter((e) => e.decision).length} of ${events.length} reviewed`;
+    const list = $("#list");
+    list.replaceChildren();
+    for (const e of shown) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "item" + (e.id === currentId ? " active" : "");
+      b.textContent = `${e.id} · ${e.event} · ${e.source} · ${e.start_s.toFixed(1)} s`;
+      const badge = document.createElement("span");
+      badge.className = "badge " + (e.decision || "");
+      badge.textContent = e.decision || "to review";
+      b.append(badge);
+      b.addEventListener("click", () => show(e.id));
+      const li = document.createElement("li");
+      li.append(b);
+      list.append(li);
+    }
+  }
+
+  function show(id) {
+    const e = events.find((x) => x.id === id);
+    if (!e) return;
+    currentId = id;
+    history.replaceState(null, "", `#${encodeURIComponent(id)}`);  // a link to this event
+    render();
+    document.querySelector(".item.active")?.scrollIntoView({ block: "nearest" });
+    const d = $("#detail");
+    d.replaceChildren($("#detail-tpl").content.cloneNode(true));
+    d.querySelector("h2").textContent = `${e.id}: ${e.event} (${e.source})`;
+    d.querySelector(".facts").textContent = `${e.start_s.toFixed(1)} to ${e.end_s.toFixed(1)} s · ` +
+      `${e.along_track_start_m.toFixed(1)} to ${e.along_track_end_m.toFixed(1)} m along the track · ${e.start_utc} UTC`;
+    const img = d.querySelector("img");
+    img.alt = `Camera frame at ${((e.start_s + e.end_s) / 2).toFixed(1)} s`;
+    img.addEventListener("error", () => img.replaceWith(Object.assign(document.createElement("p"),
+      { className: "muted", textContent: "No camera frame available (the survey data isn't on this machine)." })));
+    img.src = `/api/events/${encodeURIComponent(e.id)}/frame.jpg`;
+    const ta = d.querySelector("textarea");
+    ta.value = e.decision === "edit" ? e.final_text : e.draft;
+    d.querySelector(".note").textContent = e.model_note || "No local-model description for this event.";
+    d.querySelector(".status").textContent = e.decision
+      ? `Last decision: ${e.decision} by ${e.reviewer} at ${e.at_utc} UTC.` : "Not reviewed yet.";
+    const editButton = d.querySelector('[data-d="edit"]');
+    const sync = () => { editButton.disabled = !ta.value.trim() || ta.value.trim() === e.draft.trim(); };
+    ta.addEventListener("input", sync);
+    sync();
+    d.querySelectorAll("button[data-d]").forEach((b) => b.addEventListener("click", () =>
+      decide(e, b.dataset.d, b.dataset.d === "reject" ? d.querySelector(".reason").value : ta.value)));
+  }
+
+  async function decide(e, decision, text) {
+    const msg = $("#detail .msg");
+    const reviewer = $("#reviewer").value.trim();
+    if (!reviewer) { msg.textContent = "Enter your name as reviewer first."; $("#reviewer").focus(); return; }
+    const r = await fetch(`/api/events/${encodeURIComponent(e.id)}/decision`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ decision, reviewer, text }),
+    });
+    if (!r.ok) {
+      const body = await r.json().catch(() => ({}));
+      msg.textContent = `Not saved: ${typeof body.detail === "string" ? body.detail : "check the fields and try again."}`;
+      return;
+    }
+    await load();
+    const next = events.find((x) => !x.decision && x.start_s >= e.start_s) || events.find((x) => !x.decision);
+    show(next ? next.id : e.id);
+  }
+
+  load().then(() => { if (location.hash) show(decodeURIComponent(location.hash.slice(1))); });
+</script>
+</body>
+</html>

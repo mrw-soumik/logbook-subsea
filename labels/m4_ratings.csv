@@ -1,0 +1,43 @@
+# PROVISIONAL: one reviewer only, Claude, at the user's request on 2026-11-23, against the rubric in docs/M4_REVIEW.md.
+# NFR-04 needs two human reviewers; add their rows below (reviewer = their name) and re-run the script.
+id,version,reviewer,rating,note
+E001,plain,claude-provisional,correct,
+E001,outlined,claude-provisional,correct,
+E002,plain,claude-provisional,correct,only rippled sand in view; the system's collar flag looks false
+E002,outlined,claude-provisional,partly,guesses the pipe is under sediment; nothing in the frame shows that
+E003,plain,claude-provisional,partly,implies sand hides the pipe; the pipe is just out of view
+E003,outlined,claude-provisional,correct,
+E005,plain,claude-provisional,correct,
+E005,outlined,claude-provisional,correct,
+E007,plain,claude-provisional,partly,implies sand hides the pipe and claims low visibility; the frame is clear
+E007,outlined,claude-provisional,correct,
+E009,plain,claude-provisional,correct,
+E009,outlined,claude-provisional,correct,
+E011,plain,claude-provisional,correct,
+E011,outlined,claude-provisional,correct,
+E013,plain,claude-provisional,correct,
+E013,outlined,claude-provisional,correct,
+E018,plain,claude-provisional,partly,a faint dark patch may be the pipe; "buried" is a guess
+E018,outlined,claude-provisional,partly,a faint dark patch may be the pipe; "obscured by sediment" is a guess
+E029,plain,claude-provisional,wrong,pipe and collar visible as a dark band; called a shadow or depression
+E029,outlined,claude-provisional,wrong,calls a correct outline a false positive and the pipe buried
+E039,plain,claude-provisional,wrong,pipe and collar visible; mentions debris that isn't there
+E039,outlined,claude-provisional,wrong,pipe visible; says it can't be confirmed
+E050,plain,claude-provisional,wrong,pipe and collar visible
+E050,outlined,claude-provisional,wrong,pipe visible under the outline; says it isn't
+E061,plain,claude-provisional,partly,water is cloudy but the pipe band is visible; misses it
+E061,outlined,claude-provisional,partly,water is cloudy but the pipe band is visible; misses it
+E072,plain,claude-provisional,wrong,pipe visible; calls the image too blurry
+E072,outlined,claude-provisional,wrong,pipe visible; guesses it is buried
+E078,plain,claude-provisional,correct,
+E078,outlined,claude-provisional,correct,
+E085,plain,claude-provisional,wrong,pipe with growth clearly visible; calls the flag an artifact
+E085,outlined,claude-provisional,wrong,pipe clearly visible; calls the outline incorrect
+E089,plain,claude-provisional,partly,camera faces open water; describes a seabed that isn't in view
+E089,outlined,claude-provisional,partly,camera faces open water; describes a seabed that isn't in view
+E092,plain,claude-provisional,correct,
+E092,outlined,claude-provisional,correct,
+E100,plain,claude-provisional,wrong,collar with growth visible near the bottom; says none
+E100,outlined,claude-provisional,partly,mentions a possible collar but won't confirm the visible pipe
+E101,plain,claude-provisional,correct,a faint darker band may be the pipe
+E101,outlined,claude-provisional,correct,a faint darker band may be the pipe

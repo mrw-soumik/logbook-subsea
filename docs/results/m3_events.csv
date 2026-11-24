@@ -1,0 +1,102 @@
+id,event,source,start_s,end_s,start_utc,along_track_start_m,along_track_end_m,east_m,north_m,detail
+E001,pipe not visible,camera,1.4,4.4,2023-09-01 13:12:15.6,1.2,3.8,-548.5,134.1,3.0 s
+E002,collar or joint,camera,4.6,4.6,2023-09-01 13:12:18.8,4.0,4.0,-551.3,133.7,2.04 x usual width
+E003,pipe not visible,camera,8.8,11.2,2023-09-01 13:12:23.0,7.6,9.6,-554.8,133.0,2.4 s
+E004,collar or joint,camera,11.4,11.4,2023-09-01 13:12:25.6,9.8,9.8,-557.0,132.7,1.35 x usual width
+E005,pipe not visible,camera,12.0,16.4,2023-09-01 13:12:26.2,10.3,14.2,-557.5,132.6,4.4 s
+E006,collar or joint,camera,16.6,16.6,2023-09-01 13:12:30.8,14.4,14.4,-561.6,132.0,1.40 x usual width
+E007,pipe not visible,camera,18.2,21.8,2023-09-01 13:12:32.4,15.8,18.8,-562.9,131.7,3.6 s
+E008,collar or joint,camera,22.2,22.2,2023-09-01 13:12:36.4,19.2,19.2,-566.3,131.2,1.83 x usual width
+E009,pipe not visible,camera,26.0,27.8,2023-09-01 13:12:40.2,22.5,23.9,-569.5,130.5,1.8 s
+E010,collar or joint,camera,28.2,28.2,2023-09-01 13:12:42.4,24.3,24.3,-571.2,130.3,1.66 x usual width
+E011,pipe not visible,camera,31.6,33.2,2023-09-01 13:12:45.8,27.4,28.7,-574.3,129.7,1.6 s
+E012,collar or joint,camera,33.8,33.8,2023-09-01 13:12:48.0,29.2,29.2,-576.1,129.4,1.37 x usual width
+E013,pipe not visible,camera,37.6,38.8,2023-09-01 13:12:51.8,32.5,33.6,-579.3,128.9,1.2 s
+E014,collar or joint,camera,39.4,39.4,2023-09-01 13:12:53.6,34.1,34.1,-580.9,128.6,1.45 x usual width
+E015,collar or joint,camera,45.9,45.9,2023-09-01 13:13:00.1,39.5,39.5,-586.2,127.8,1.44 x usual width
+E016,collar or joint,camera,52.3,52.3,2023-09-01 13:13:06.5,45.1,45.1,-591.7,126.8,1.29 x usual width
+E017,collar or joint,camera,59.1,59.1,2023-09-01 13:13:13.3,50.9,50.9,-597.4,125.8,1.35 x usual width
+E018,collar or joint,camera,65.1,65.1,2023-09-01 13:13:19.3,55.9,55.9,-602.3,124.9,1.36 x usual width
+E019,collar or joint,camera,71.3,71.3,2023-09-01 13:13:25.5,61.2,61.2,-607.5,124.0,1.25 x usual width
+E020,collar or joint,camera,77.1,77.1,2023-09-01 13:13:31.3,66.2,66.2,-612.5,123.1,1.46 x usual width
+E021,collar or joint,camera,82.1,82.1,2023-09-01 13:13:36.3,70.6,70.6,-616.8,122.5,1.27 x usual width
+E022,collar or joint,camera,89.1,89.1,2023-09-01 13:13:43.3,76.5,76.5,-622.6,121.6,1.48 x usual width
+E023,collar or joint,camera,94.1,94.1,2023-09-01 13:13:48.3,80.9,80.9,-626.8,120.7,1.60 x usual width
+E024,collar or joint,camera,100.1,100.1,2023-09-01 13:13:54.3,86.1,86.1,-632.0,119.7,1.40 x usual width
+E025,collar or joint,camera,112.1,112.1,2023-09-01 13:14:06.3,96.5,96.5,-642.2,118.1,1.61 x usual width
+E026,collar or joint,camera,118.1,118.1,2023-09-01 13:14:12.3,101.5,101.5,-647.1,117.3,1.53 x usual width
+E027,collar or joint,camera,123.2,123.2,2023-09-01 13:14:17.4,106.1,106.1,-651.6,116.5,1.50 x usual width
+E028,collar or joint,camera,129.2,129.2,2023-09-01 13:14:23.4,111.2,111.2,-656.6,115.9,1.37 x usual width
+E029,collar or joint,camera,135.2,135.2,2023-09-01 13:14:29.4,116.3,116.3,-661.7,115.3,1.45 x usual width
+E030,collar or joint,camera,141.2,141.2,2023-09-01 13:14:35.4,121.5,121.5,-666.7,114.6,1.58 x usual width
+E031,collar or joint,camera,146.2,146.2,2023-09-01 13:14:40.4,125.8,125.8,-671.0,113.8,1.52 x usual width
+E032,collar or joint,camera,152.8,152.8,2023-09-01 13:14:47.0,131.5,131.5,-676.6,113.1,1.27 x usual width
+E033,collar or joint,camera,159.2,159.2,2023-09-01 13:14:53.4,136.9,136.9,-682.0,112.3,1.51 x usual width
+E034,collar or joint,camera,165.4,165.4,2023-09-01 13:14:59.6,142.1,142.1,-687.1,111.5,2.00 x usual width
+E035,collar or joint,camera,176.6,176.6,2023-09-01 13:15:10.8,152.0,152.0,-696.8,110.0,1.50 x usual width
+E036,collar or joint,camera,181.0,181.0,2023-09-01 13:15:15.2,155.6,155.6,-700.3,109.5,1.27 x usual width
+E037,collar or joint,camera,187.6,187.6,2023-09-01 13:15:21.8,161.3,161.3,-706.0,108.8,1.38 x usual width
+E038,collar or joint,camera,193.8,193.8,2023-09-01 13:15:28.0,166.7,166.7,-711.3,108.0,1.42 x usual width
+E039,collar or joint,camera,199.2,199.2,2023-09-01 13:15:33.4,171.4,171.4,-716.0,107.4,1.54 x usual width
+E040,collar or joint,camera,205.5,205.5,2023-09-01 13:15:39.7,176.7,176.7,-721.2,106.6,1.44 x usual width
+E041,collar or joint,camera,211.7,211.7,2023-09-01 13:15:45.9,182.0,182.0,-726.5,105.9,1.71 x usual width
+E042,collar or joint,camera,217.7,217.7,2023-09-01 13:15:51.9,187.1,187.1,-731.5,105.1,1.77 x usual width
+E043,collar or joint,camera,222.3,222.3,2023-09-01 13:15:56.5,191.0,191.0,-735.4,104.5,1.42 x usual width
+E044,collar or joint,camera,228.3,228.3,2023-09-01 13:16:02.5,196.2,196.2,-740.5,103.9,1.48 x usual width
+E045,collar or joint,camera,234.3,234.3,2023-09-01 13:16:08.5,201.5,201.5,-745.7,103.2,1.43 x usual width
+E046,collar or joint,camera,240.1,240.1,2023-09-01 13:16:14.3,206.5,206.5,-750.7,102.6,1.42 x usual width
+E047,collar or joint,camera,246.3,246.3,2023-09-01 13:16:20.5,211.8,211.8,-755.9,101.7,1.53 x usual width
+E048,collar or joint,camera,251.3,251.3,2023-09-01 13:16:25.5,216.1,216.1,-760.1,101.3,1.40 x usual width
+E049,collar or joint,camera,258.1,258.1,2023-09-01 13:16:32.3,221.9,221.9,-765.8,100.5,1.40 x usual width
+E050,collar or joint,camera,262.3,262.3,2023-09-01 13:16:36.5,225.6,225.6,-769.5,99.8,1.29 x usual width
+E051,collar or joint,camera,268.9,268.9,2023-09-01 13:16:43.1,231.3,231.3,-775.2,99.2,1.44 x usual width
+E052,collar or joint,camera,273.9,273.9,2023-09-01 13:16:48.1,235.4,235.4,-779.3,98.8,1.45 x usual width
+E053,collar or joint,camera,281.3,281.3,2023-09-01 13:16:55.5,241.8,241.8,-785.6,98.0,1.72 x usual width
+E054,collar or joint,camera,287.4,287.4,2023-09-01 13:17:01.6,247.2,247.2,-790.9,97.2,1.47 x usual width
+E055,collar or joint,camera,293.4,293.4,2023-09-01 13:17:07.6,252.2,252.2,-795.9,96.7,1.39 x usual width
+E056,collar or joint,camera,298.4,298.4,2023-09-01 13:17:12.6,256.6,256.6,-800.3,96.2,1.29 x usual width
+E057,collar or joint,camera,304.0,304.0,2023-09-01 13:17:18.2,261.5,261.5,-805.1,95.6,1.45 x usual width
+E058,collar or joint,camera,309.4,309.4,2023-09-01 13:17:23.6,266.1,266.1,-809.6,95.0,1.40 x usual width
+E059,collar or joint,camera,315.6,315.6,2023-09-01 13:17:29.8,271.6,271.6,-815.2,94.2,1.38 x usual width
+E060,collar or joint,camera,321.4,321.4,2023-09-01 13:17:35.6,276.5,276.5,-820.0,93.7,1.40 x usual width
+E061,collar or joint,camera,327.2,327.2,2023-09-01 13:17:41.4,281.4,281.4,-824.8,93.1,1.24 x usual width
+E062,collar or joint,camera,332.8,332.8,2023-09-01 13:17:47.0,286.5,286.5,-829.9,92.5,1.32 x usual width
+E063,collar or joint,camera,337.4,337.4,2023-09-01 13:17:51.6,290.5,290.5,-833.8,92.1,1.23 x usual width
+E064,collar or joint,camera,344.0,344.0,2023-09-01 13:17:58.2,296.3,296.3,-839.6,91.3,1.33 x usual width
+E065,collar or joint,camera,351.4,351.4,2023-09-01 13:18:05.6,302.8,302.8,-846.0,90.5,1.41 x usual width
+E066,collar or joint,camera,360.6,360.6,2023-09-01 13:18:14.8,310.7,310.7,-853.8,89.7,1.38 x usual width
+E067,collar or joint,camera,367.5,367.5,2023-09-01 13:18:21.7,316.7,316.7,-859.8,88.9,1.26 x usual width
+E068,collar or joint,camera,372.9,372.9,2023-09-01 13:18:27.1,321.3,321.3,-864.4,88.5,1.30 x usual width
+E069,collar or joint,camera,379.1,379.1,2023-09-01 13:18:33.3,326.7,326.7,-869.7,87.8,1.56 x usual width
+E070,collar or joint,camera,383.7,383.7,2023-09-01 13:18:37.9,330.9,330.9,-873.8,87.4,1.36 x usual width
+E071,pipe not visible,sonar HF,386.0,484.0,2023-09-01 13:18:40.2,332.8,415.3,-875.7,87.1,98 s
+E072,collar or joint,camera,387.1,387.1,2023-09-01 13:18:41.3,333.7,333.7,-876.6,87.0,1.37 x usual width
+E073,collar or joint,camera,394.5,394.5,2023-09-01 13:18:48.7,340.1,340.1,-882.9,86.2,1.27 x usual width
+E074,collar or joint,camera,402.1,402.1,2023-09-01 13:18:56.3,346.7,346.7,-889.5,85.5,1.56 x usual width
+E075,pipe not visible,sonar LF,405.0,440.0,2023-09-01 13:18:59.2,349.1,379.4,-891.9,85.1,35 s
+E076,collar or joint,camera,406.1,406.1,2023-09-01 13:19:00.3,350.1,350.1,-892.8,85.0,1.35 x usual width
+E077,collar or joint,camera,413.9,413.9,2023-09-01 13:19:08.1,356.9,356.9,-899.5,84.1,1.36 x usual width
+E078,pipe not visible,camera,416.3,417.3,2023-09-01 13:19:10.5,358.9,359.8,-901.6,83.8,1.0 s
+E079,collar or joint,camera,419.3,419.3,2023-09-01 13:19:13.5,361.6,361.6,-904.2,83.8,1.61 x usual width
+E080,collar or joint,camera,425.3,425.3,2023-09-01 13:19:19.5,366.6,366.6,-909.1,83.0,1.43 x usual width
+E081,collar or joint,camera,430.9,430.9,2023-09-01 13:19:25.1,371.5,371.5,-913.9,82.3,1.81 x usual width
+E082,collar or joint,camera,436.3,436.3,2023-09-01 13:19:30.5,376.2,376.2,-918.6,81.7,1.57 x usual width
+E083,collar or joint,camera,442.1,442.1,2023-09-01 13:19:36.3,381.2,381.2,-923.6,81.2,1.54 x usual width
+E084,collar or joint,camera,447.2,447.2,2023-09-01 13:19:41.4,385.8,385.8,-928.1,80.4,1.45 x usual width
+E085,collar or joint,camera,453.4,453.4,2023-09-01 13:19:47.6,391.3,391.3,-933.5,79.9,1.49 x usual width
+E086,collar or joint,camera,458.8,458.8,2023-09-01 13:19:53.0,395.9,395.9,-937.9,79.1,1.43 x usual width
+E087,pipe not visible,sonar LF,468.0,538.0,2023-09-01 13:20:02.2,401.6,463.1,-943.5,78.4,70 s
+E088,collar or joint,camera,468.2,468.2,2023-09-01 13:20:02.4,401.7,401.7,-943.6,78.4,1.38 x usual width
+E089,pipe not visible,camera,473.0,474.0,2023-09-01 13:20:07.2,405.5,406.4,-947.4,78.3,1.0 s
+E090,collar or joint,camera,474.6,474.6,2023-09-01 13:20:08.8,406.9,406.9,-948.9,78.1,1.35 x usual width
+E091,collar or joint,camera,479.6,479.6,2023-09-01 13:20:13.8,411.3,411.3,-953.2,77.7,1.45 x usual width
+E092,pipe not visible,camera,483.2,484.6,2023-09-01 13:20:17.4,414.6,415.8,-956.3,76.9,1.4 s
+E093,collar or joint,camera,491.2,491.2,2023-09-01 13:20:25.4,422.0,422.0,-963.4,75.5,1.65 x usual width
+E094,collar or joint,camera,494.6,494.6,2023-09-01 13:20:28.8,424.7,424.7,-966.0,75.1,1.21 x usual width
+E095,pipe not visible,sonar HF,497.0,538.0,2023-09-01 13:20:31.2,427.0,463.1,-968.3,75.0,41 s
+E096,collar or joint,camera,501.8,501.8,2023-09-01 13:20:36.0,431.3,431.3,-972.6,74.5,1.26 x usual width
+E097,collar or joint,camera,507.6,507.6,2023-09-01 13:20:41.8,436.5,436.5,-977.7,73.9,1.48 x usual width
+E098,collar or joint,camera,519.2,519.2,2023-09-01 13:20:53.4,446.6,446.6,-987.7,72.7,1.70 x usual width
+E099,collar or joint,camera,530.3,530.3,2023-09-01 13:21:04.5,456.3,456.3,-997.3,71.5,1.34 x usual width
+E100,collar or joint,camera,535.7,535.7,2023-09-01 13:21:09.9,461.0,461.0,-1002.0,71.0,1.50 x usual width
+E101,pipe not visible,camera,535.9,536.9,2023-09-01 13:21:10.1,461.2,462.1,-1002.1,71.0,1.0 s

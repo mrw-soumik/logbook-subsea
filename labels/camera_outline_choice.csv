@@ -1,0 +1,22 @@
+# PROVISIONAL: chosen by Claude on 2026-11-23, at the user's request, by comparing each Segment Anything candidate with
+# the raw frame on docs/figures/m6_outline_candidates.jpg. choice = candidate number, or reject. A person should re-check.
+chunk,stem,t,choice,note
+Chunk3,1693574473.917,-0.0,1,
+Chunk3,1693574478.923,5.0,1,
+Chunk3,1693574483.929,10.0,1,
+Chunk3,1693574488.936,15.0,1,
+Chunk3,1693574493.942,20.0,1,
+Chunk3,1693574498.948,25.0,1,includes the collar at the bottom
+Chunk3,1693574508.961,35.0,1,
+Chunk3,1693574513.967,40.0,1,
+Chunk3,1693574518.973,45.1,1,
+Chunk3,1693574523.979,50.1,1,
+Chunk3,1693574528.985,55.1,1,
+Chunk3,1693574533.992,60.1,0,pipe narrowing to a collar at the bottom
+Chunk3,1693574544.004,70.1,1,pipe covered in growth
+Chunk3,1693574559.023,85.1,1,faint pipe
+Chunk3,1693574569.035,95.1,1,cloudy water
+Chunk3,1693574574.041,100.1,0,pipe and collar
+Chunk4,1693575233.861,220.3,1,pipe at the left edge
+Chunk4,1693575238.867,225.3,1,"faint, at the left; may be a little wide"
+Chunk4,1693575243.873,230.3,1,

@@ -1,0 +1,54 @@
+{
+  "model": "mlx-community/Qwen3-VL-8B-Instruct-4bit",
+  "model_licence": "Apache-2.0",
+  "runtime": "mlx-vlm (MIT), on the Mac's graphics chip",
+  "prompts": {
+    "plain": "This is a frame of underwater video from a vehicle surveying a subsea pipeline from about 3 m above the seabed. The automatic system flagged it as: {event}. Write one or two short sentences for an inspection log describing what is visible: whether the pipe can be seen, whether it is exposed or partly covered by sand, any marine growth, debris or damage, and any collar or joint. Say if something is unclear rather than guessing.",
+    "outlined": "This is a frame of underwater video from a vehicle surveying a subsea pipeline from about 3 m above the seabed. The automatic system flagged it as: {event}. Write one or two short sentences for an inspection log describing what is visible: whether the pipe can be seen, whether it is exposed or partly covered by sand, any marine growth, debris or damage, and any collar or joint. Say if something is unclear rather than guessing. A separate pipe-detection model has outlined in yellow where it found the pipe; if there is no yellow outline, it found none. Treat the outline as a hint that may be wrong, and describe what you can see."
+  },
+  "settings": {
+    "temperature": 0.0,
+    "max_tokens": 120,
+    "frame_size": [
+      960,
+      540
+    ]
+  },
+  "events": 20,
+  "by_event": {
+    "pipe not visible": 11,
+    "collar or joint": 9
+  },
+  "drafts_saying_pipe_not_visible": {
+    "outlined / collar or joint": "8 of 9",
+    "outlined / pipe not visible": "11 of 11",
+    "plain / collar or joint": "9 of 9",
+    "plain / pipe not visible": "11 of 11"
+  },
+  "seconds_per_draft": {
+    "median": 5.1,
+    "max": 5.8
+  },
+  "peak_memory_gb": 6.8,
+  "cost": "$0: runs locally, no API",
+  "ratings": {
+    "outlined": {
+      "by_reviewer": {
+        "claude-provisional": {
+          "rated": 20,
+          "share_correct": 0.5
+        }
+      },
+      "status": "waiting for two reviewers (so far: ['claude-provisional'])"
+    },
+    "plain": {
+      "by_reviewer": {
+        "claude-provisional": {
+          "rated": 20,
+          "share_correct": 0.45
+        }
+      },
+      "status": "waiting for two reviewers (so far: ['claude-provisional'])"
+    }
+  }
+}

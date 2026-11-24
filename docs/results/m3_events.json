@@ -1,0 +1,53 @@
+{
+  "rules": {
+    "camera_frames_per_s": 5.0,
+    "hidden_share": 0.02,
+    "hidden_min_s": 1.0,
+    "collar_ratio": 1.2,
+    "collar_gap_s": 3.0,
+    "sonar_score": 0.5,
+    "sonar_min_s": 2.0
+  },
+  "events": {
+    "collar or joint (camera)": 86,
+    "pipe not visible (camera)": 11,
+    "pipe not visible (sonar HF)": 2,
+    "pipe not visible (sonar LF)": 2
+  },
+  "collar_spacing_median": {
+    "s": 6.0,
+    "m": 5.1
+  },
+  "track_m": 464.5,
+  "models": {
+    "m1_segmentation": "e8084a3605a3",
+    "m2_sonar_detection": "48ee0e7e781c"
+  },
+  "processing": {
+    "footage_s": 539.5,
+    "seconds": 86.0,
+    "device": "mps",
+    "minutes_per_hour_of_footage": 9.6
+  },
+  "hand_marked_minute_s": [
+    360,
+    420
+  ],
+  "score": {
+    "status": "scored",
+    "collars": {
+      "hand_marked": 11,
+      "listed": 11,
+      "matched_within_s": 2.0,
+      "matched": 10
+    },
+    "pipe_not_visible_camera": {
+      "hand_marked": 1,
+      "found_half_covered": 1,
+      "listed": 1,
+      "listed_with_no_hand_mark": 0
+    },
+    "event_recall": 0.917,
+    "collar_precision": 0.909
+  }
+}

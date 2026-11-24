@@ -1,0 +1,35 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+
+jobs:
+  gate-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-app.txt pytest==9.2.0 httpx==0.28.1
+      - name: Quality gate on the committed results
+        run: python scripts/quality_gate.py
+      - name: Tests
+        run: python -m pytest -q
+
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: docker build -t logbook-subsea .
+      - name: Start the review screen and check it answers
+        run: |
+          docker run -d --name app -p 127.0.0.1:8000:8000 logbook-subsea
+          for i in $(seq 1 30); do curl -fs http://127.0.0.1:8000/api/events -o events.json && break; sleep 1; done
+          python3 -c "import json; n = len(json.load(open('events.json'))); assert n > 0; print(n, 'events served')"
+          curl -fs http://127.0.0.1:8000/export/report.md | head -12
+      - if: always()
+        run: docker logs app

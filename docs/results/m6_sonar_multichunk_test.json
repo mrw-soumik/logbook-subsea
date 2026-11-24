@@ -1,0 +1,243 @@
+{
+  "pooled": {
+    "sonar_HF": {
+      "pipe_windows_found": [
+        331,
+        364
+      ],
+      "no_pipe_windows_left_empty": [
+        222,
+        224
+      ],
+      "balanced_accuracy": 0.95
+    },
+    "sonar_LF": {
+      "pipe_windows_found": [
+        313,
+        333
+      ],
+      "no_pipe_windows_left_empty": [
+        213,
+        219
+      ],
+      "balanced_accuracy": 0.956
+    }
+  },
+  "sonar_model": "m6_sonar_multichunk.pt",
+  "camera_frame_check": {
+    "labels": "labels/camera_presence_unseen.csv",
+    "pooled": {
+      "visible_frames_found": [
+        19,
+        19
+      ],
+      "not_visible_frames_marked": [
+        36,
+        168
+      ],
+      "unsure_frames_left_out": 9,
+      "balanced_accuracy": 0.893
+    },
+    "Chunk3": {
+      "visible_frames_found": [
+        16,
+        16
+      ],
+      "not_visible_frames_marked": [
+        10,
+        89
+      ],
+      "unsure_frames_left_out": 3,
+      "balanced_accuracy": 0.944
+    },
+    "Chunk4": {
+      "visible_frames_found": [
+        3,
+        3
+      ],
+      "not_visible_frames_marked": [
+        26,
+        79
+      ],
+      "unsure_frames_left_out": 6,
+      "balanced_accuracy": 0.835
+    }
+  },
+  "camera_reference_iou": {
+    "outlines": "labels/camera_masks_unseen: Segment Anything inside boxes drawn around points placed by Claude, candidates chosen by Claude (provisional)",
+    "pooled": {
+      "frames": 19,
+      "pipe_iou": 0.672,
+      "mean_iou": 0.795
+    },
+    "Chunk3": {
+      "frames": 16,
+      "pipe_iou": 0.674,
+      "mean_iou": 0.796
+    },
+    "Chunk4": {
+      "frames": 3,
+      "pipe_iou": 0.661,
+      "mean_iou": 0.79
+    }
+  },
+  "note": "Sonar: every 5th window, all labels. Camera: one frame every 5 s; no camera labels exist outside Chunk 2.",
+  "score_threshold_for_seen": 0.5,
+  "camera_pipe_share_for_found": 0.02,
+  "chunks": {
+    "Chunk3": {
+      "sonar_HF": {
+        "windows": 38,
+        "skipped_bpm_files": 0,
+        "detector": {
+          "ap50": 1.0,
+          "ap50_95": 0.386,
+          "pipe_windows_found": [
+            6,
+            6
+          ],
+          "no_pipe_windows_left_empty": [
+            32,
+            32
+          ],
+          "balanced_accuracy": 1.0
+        },
+        "fixed_box_baseline": {
+          "ap50": 0.0,
+          "ap50_95": 0.0,
+          "pipe_windows_found": [
+            6,
+            6
+          ],
+          "no_pipe_windows_left_empty": [
+            0,
+            32
+          ],
+          "balanced_accuracy": 0.5
+        },
+        "pipe_box_centre_relative": {
+          "median": 0.222,
+          "chunk2": 0.438
+        }
+      },
+      "sonar_LF": {
+        "windows": 38,
+        "skipped_bpm_files": 0,
+        "detector": {
+          "ap50": 0.276,
+          "ap50_95": 0.035,
+          "pipe_windows_found": [
+            5,
+            7
+          ],
+          "no_pipe_windows_left_empty": [
+            30,
+            31
+          ],
+          "balanced_accuracy": 0.841
+        },
+        "fixed_box_baseline": {
+          "ap50": 0.0,
+          "ap50_95": 0.0,
+          "pipe_windows_found": [
+            7,
+            7
+          ],
+          "no_pipe_windows_left_empty": [
+            0,
+            31
+          ],
+          "balanced_accuracy": 0.5
+        },
+        "pipe_box_centre_relative": {
+          "median": 0.208,
+          "chunk2": 0.437
+        }
+      },
+      "camera": {
+        "frames": 108,
+        "pipe_found": 29,
+        "frames_where_sonar_label_has_pipe": 6,
+        "pipe_found_when_sonar_label_has_pipe": 6,
+        "pipe_found_when_sonar_label_has_none": 23
+      }
+    },
+    "Chunk4": {
+      "sonar_HF": {
+        "windows": 550,
+        "skipped_bpm_files": 0,
+        "detector": {
+          "ap50": 0.913,
+          "ap50_95": 0.468,
+          "pipe_windows_found": [
+            325,
+            358
+          ],
+          "no_pipe_windows_left_empty": [
+            190,
+            192
+          ],
+          "balanced_accuracy": 0.949
+        },
+        "fixed_box_baseline": {
+          "ap50": 0.059,
+          "ap50_95": 0.015,
+          "pipe_windows_found": [
+            358,
+            358
+          ],
+          "no_pipe_windows_left_empty": [
+            0,
+            192
+          ],
+          "balanced_accuracy": 0.5
+        },
+        "pipe_box_centre_relative": {
+          "median": 0.313,
+          "chunk2": 0.438
+        }
+      },
+      "sonar_LF": {
+        "windows": 514,
+        "skipped_bpm_files": 110,
+        "detector": {
+          "ap50": 0.917,
+          "ap50_95": 0.44,
+          "pipe_windows_found": [
+            308,
+            326
+          ],
+          "no_pipe_windows_left_empty": [
+            183,
+            188
+          ],
+          "balanced_accuracy": 0.959
+        },
+        "fixed_box_baseline": {
+          "ap50": 0.072,
+          "ap50_95": 0.028,
+          "pipe_windows_found": [
+            326,
+            326
+          ],
+          "no_pipe_windows_left_empty": [
+            0,
+            188
+          ],
+          "balanced_accuracy": 0.5
+        },
+        "pipe_box_centre_relative": {
+          "median": 0.419,
+          "chunk2": 0.437
+        }
+      },
+      "camera": {
+        "frames": 88,
+        "pipe_found": 35,
+        "frames_where_sonar_label_has_pipe": 52,
+        "pipe_found_when_sonar_label_has_pipe": 35,
+        "pipe_found_when_sonar_label_has_none": 0
+      }
+    }
+  }
+}

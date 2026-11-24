@@ -1,0 +1,117 @@
+{
+  "navigation": {
+    "rows": 16170,
+    "start_utc": "2023-09-01 13:12:14.246959448",
+    "duration_s": 539.6,
+    "track_length_m": 464.5,
+    "speed_m_s_median": 0.86,
+    "depth_m_range": [
+      16.0,
+      17.3
+    ],
+    "altitude_m_range": [
+      2.6,
+      3.4
+    ],
+    "other_logs": [
+      "Acceleration",
+      "Altitude",
+      "AngularVelocity",
+      "Depth",
+      "ForwardDistance",
+      "Pressure",
+      "Rpm",
+      "Temperature",
+      "WaterVelocity"
+    ]
+  },
+  "cameras": {
+    "cam0_frames": 16170,
+    "cam0_fps": 29.96,
+    "cam0_size": [
+      2704,
+      1520
+    ],
+    "cam1_frames": 2160,
+    "cam1_fps": 4.0,
+    "cam1_size": [
+      1936,
+      1216
+    ],
+    "cam0_frames_with_navigation_row": 16169
+  },
+  "segmentation": {
+    "images": 647,
+    "images_by_type": {
+      ".jpg": 540,
+      ".png": 107
+    },
+    "masks": 647,
+    "masks_without_image": 0,
+    "mask_modes": {
+      "P": 523,
+      "L": 18,
+      "RGB": 106
+    },
+    "mask_size": [
+      2704,
+      1520
+    ],
+    "mask_values_seen": [
+      [
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1
+      ],
+      [
+        128,
+        0,
+        0
+      ]
+    ],
+    "nonzero_pixel_share_median": 0.171,
+    "images_matching_cam0_frames": 560
+  },
+  "sonar_HF": {
+    "images": 539,
+    "image_mode": "RGB",
+    "image_size": [
+      5000,
+      500
+    ],
+    "yolo_label_files": 435,
+    "classes": [
+      "Pipeline"
+    ],
+    "coco_images": 539,
+    "coco_boxes": 435,
+    "coco_categories": [
+      "Pipeline"
+    ],
+    "images_per_second": 1.0
+  },
+  "sonar_LF": {
+    "images": 539,
+    "image_mode": "RGB",
+    "image_size": [
+      2500,
+      500
+    ],
+    "yolo_label_files": 455,
+    "classes": [
+      "Pipeline"
+    ],
+    "coco_images": 539,
+    "coco_boxes": 455,
+    "coco_categories": [
+      "Pipeline"
+    ],
+    "images_per_second": 1.0
+  }
+}

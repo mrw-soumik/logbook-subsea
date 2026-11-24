@@ -1,0 +1,16 @@
+# PROVISIONAL, NOT INDEPENDENT: marked 2026-11-23 by Claude (the assistant that built the event rules), at the user's request,
+# from raw camera frames every 0.5 s, after it had already seen the system's output for this minute. A person should re-mark.
+time_s,event,note
+361.5,collar,
+367.0,collar,
+373.5,collar,
+379.0,collar,
+384.0,collar,faint in blue-green water
+390.1,collar,
+396.1,collar,
+402.1,collar,
+407.6,collar,
+412.6,collar,
+416.1,hidden_start,camera shows open water
+417.6,hidden_end,
+419.1,collar,

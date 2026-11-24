@@ -1,0 +1,130 @@
+{
+  "trained_on": {
+    "Chunk2 HF": {
+      "windows": 539,
+      "with_pipe": 435
+    },
+    "Chunk2 LF": {
+      "windows": 539,
+      "with_pipe": 455
+    },
+    "Chunk0 HF": {
+      "windows": 181,
+      "with_pipe": 113
+    },
+    "Chunk0 LF": {
+      "windows": 211,
+      "with_pipe": 138
+    },
+    "Chunk1 HF": {
+      "windows": 109,
+      "with_pipe": 50
+    },
+    "Chunk1 LF": {
+      "windows": 109,
+      "with_pipe": 49
+    }
+  },
+  "unseen_for_test": [
+    "Chunk3",
+    "Chunk4"
+  ],
+  "settings": {
+    "epochs": 20,
+    "batch": 4,
+    "lr": 0.005,
+    "schedule": "one-cycle",
+    "seed": 0,
+    "augmentation": "port-starboard mirror",
+    "pipe_free_batches_skipped": "all batches whose four windows had no pipe box (see pipe_free_batches below)",
+    "note": "three earlier runs hit NaN losses from epoch 6, every time on a batch of four pipe-free windows; a run keeping every proposal instead was far too slow",
+    "device": "mps",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2"
+  },
+  "minutes": 125.9,
+  "pipe_free_batches": 23,
+  "skipped_non_finite_batches": [],
+  "curve": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5307
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5196
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.57
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5605
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5499
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5358
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4987
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4886
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.5186
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.5213
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.5048
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.5049
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.4858
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.4691
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.4324
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.4361
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.435
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.4034
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.3792
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.3769
+    }
+  ]
+}
